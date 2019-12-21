@@ -122,4 +122,3 @@ export function activate(context: vscode.ExtensionContext) {
 export function deactivate() {}
 
 // workbench.action.gotoLine 跳行 Ctrl+G
-// https://docs.idqqimg.com/tim/docs/sheets/static/js/bundle_report_lazy-86eab7ee1b.js 测试地址
