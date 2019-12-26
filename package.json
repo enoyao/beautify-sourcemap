@@ -2,7 +2,16 @@
 	"name": "beautify-sourcemap",
 	"displayName": "Beautify Source Map",
 	"description": "获得压缩代码文件中的行列数对应格式化后的代码文件及行列数",
-	"version": "0.0.1",
+	"homepage": "https://github.com/enoyao/beautify-sourcemap#readme",
+	"bugs": {
+		"url": "https://github.com/enoyao/beautify-sourcemap/issues/new"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/enoyao/beautify-sourcemap"
+	},
+	"license": "MIT",
+	"version": "0.0.3",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
@@ -13,7 +22,7 @@
 	},
 	"publisher": "Wscats",
 	"preview": true,
-	"icon": "logo/debug.jpeg",
+	"icon": "logo/document.jpeg",
 	"categories": [
 		"Other",
 		"Debuggers",
@@ -57,13 +66,15 @@
 		"pretest": "npm run compile",
 		"test": "node ./out/test/runTest.js"
 	},
+	"dependencies": {
+		"js-beautify-sourcemap": "^0.2.2"
+	},
 	"devDependencies": {
 		"@types/glob": "^7.1.1",
 		"@types/mocha": "^5.2.7",
 		"@types/node": "^12.11.7",
 		"@types/vscode": "^1.39.0",
 		"glob": "^7.1.5",
-		"js-beautify-sourcemap": "^0.2.2",
 		"mocha": "^6.2.2",
 		"tslint": "^5.20.0",
 		"typescript": "^3.6.4",
