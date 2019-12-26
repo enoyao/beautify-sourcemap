@@ -1,6 +1,6 @@
 {
 	"name": "beautify-sourcemap",
-	"displayName": "Beautify Source Map",
+	"displayName": "Tencent Beautify Source Map For VS Code",
 	"description": "获得压缩代码文件中的行列数对应格式化后的代码文件及行列数",
 	"homepage": "https://github.com/enoyao/beautify-sourcemap#readme",
 	"bugs": {
@@ -11,7 +11,7 @@
 		"url": "https://github.com/enoyao/beautify-sourcemap"
 	},
 	"license": "MIT",
-	"version": "0.0.3",
+	"version": "0.0.5",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
@@ -20,7 +20,7 @@
 		"email": "kalone.cool@gmail.com",
 		"url": "https://github.com/Wscats"
 	},
-	"publisher": "Wscats",
+	"publisher": "Eno Yao",
 	"preview": true,
 	"icon": "logo/document.jpeg",
 	"categories": [

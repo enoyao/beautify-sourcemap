@@ -1,4 +1,6 @@
-# js-beautify-sourcemap
+# Tencent Beautify Sourcemap
+
+<img src="./logo/1.gif" />
 
 js-beautify, sourcemap support
 
