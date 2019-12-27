@@ -28,6 +28,8 @@ https://github.githubassets.com/assets/frameworks-fd548924.js:1:66
 
 # Thanks
 
+特别鸣谢 [js-beautify-sourcemap](https://github.com/joeyguo/js-beautify-sourcemap) 库
+
 如果您有任何疑问，您可以在 [Issues](https://github.com/enoyao/beautify-sourcemap/issues/new) 里面给我们留言，你的支持是我们前进的最大动力😁
 
 # License
