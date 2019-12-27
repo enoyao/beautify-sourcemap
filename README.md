@@ -1,91 +1,28 @@
 # Tencent Beautify Sourcemap
 
-<img src="./logo/1.gif" />
+<a href="https://marketplace.visualstudio.com/items?itemName=Wscats.beautify-sourcemap"><img src="https://img.shields.io/badge/Download-+-orange" alt="Download" /></a>
+<a href="https://marketplace.visualstudio.com/items?itemName=Wscats.beautify-sourcemap"><img src="https://img.shields.io/badge/Macketplace-v0.X-brightgreen" alt="Macketplace" /></a>
+<a href="https://github.com/Wscats/compile-hero"><img src="https://img.shields.io/badge/Github Page-Wscats-yellow" alt="Github Page" /></a>
+<a href="https://github.com/Wscats"><img src="https://img.shields.io/badge/Author-Eno Yao-blueviolet" alt="Eno Yao" /></a>
+<a href="https://github.com/Wscats"><img src="https://api.netlify.com/api/v1/badges/b652768b-1673-42cd-98dd-3fd807b2ebca/deploy-status" alt="Status" /></a>
 
-js-beautify, sourcemap support
+Tencent Beautify Source Map For VS Code 是腾讯文档产品的 Visual Studio Code 插件。该插件可以让您更好地在本地进行项目开发和代码调试。
+
+通过该插件，您可以：
+
+- 拉取远程 SourceMap 代码到本地，并格式化和定位行列数。
+- 在本地开发、调试及测试您的文档代码。
 
 # Usage
 
-## as Command line tools
-输入压缩代码文件的地址及行列数，输出格式化后的代码文件及行列数
+在任一文件中，新建一份 `xxx.js`，并对该文件点击右键，会出现 `Beautify Source Map` 选项，工作区上面会出现一个输入框，并提醒您输入远程 JS 压缩代码地址及行列数，输入完成后按回车键，会在该 `xxx.js` 输出格式化后的代码文件及行列数。
 
-### 全局安装
-```sh
-npm i -g js-beautify-sourcemap
-```
+<img src="./logo/1.gif" />
 
-### 设置输出文件的目录（已设置可跳过）
-```sh
-# 设置输出文件的目录（已设置可跳过）
-jsbs config -o <outputDir>
-```
+# Thanks
 
-### 开始执行
-```sh
-# filepath 为压缩文件的路径，支持线上文件url，也支持本地文件路径
+如果你有任何疑问，你可以在 [issues](https://github.com/enoyao/beautify-sourcemap/issues/new) 里面给我们留言，你的支持使我们最大的动力😁
 
-jsbs <filepath> -l <row:column>
-```
+# License
 
-### example
-```sh
-jsbs https://s1.xx.com/a.xsaf.js -l 1:20
-```
-
-## as Modules
-
-```sh
-npm install js-beautify-sourcemap
-```
-
-```js
-import jsbs from 'js-beautify-sourcemap';
-// use cdn, window.jsbs
-
-var src = `function test(){console.log(js-sourcemap)};`;
-
-var obj = jsbs(src, {}, {
-    line: 1,
-    column: 28
-});  
-console.log(obj);
-
-```
-### API
-
-var obj = jsbs(source, opts, loc);
-
-### input
-
-- source - js code
-
-- opts - the same as [js-beautify](https://github.com/beautify-web/js-beautify)
-
-- loc - source's loc, to get target's loc
-
-```js
-{
-    line, 
-    column
-}
-```
-
-### output
-
-- obj
-
-```js
-{
-    code,      // js-beautify code
-    loc: {     // target's loc
-        line,  
-        column
-    },
-    sourcemap, // sourcemap
-}
-```
-
-### Thanks to 
-
-- js-beautify
-- js-sourcemap
+Tencent Beautify Source Map For VS Code 基于 [MIT](https://opensource.org/licenses/MIT) 协议。
