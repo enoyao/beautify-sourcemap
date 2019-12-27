@@ -1,9 +1,4 @@
 # Change Log
 
-All notable changes to the "beautify-sourcemap" extension will be documented in this file.
-
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- 2019-12-26 添加对 Source Map 下载到本地的支持，第一版发布
+- 2019-12-27 添加对下载代码的格式化，并且在所在行和列添加 `/*xx*/` 片段提示

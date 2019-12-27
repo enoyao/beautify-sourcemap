@@ -16,10 +16,10 @@ Tencent Beautify Source Map For VS Code 是腾讯文档产品的 Visual Studio C
 # Usage
 
 在任一文件中，新建一份 `xxx.js`，并对该文件点击右键，会出现 `Beautify Source Map` 选项，工作区上面会出现一个输入框，并提醒您输入远程 JS 压缩代码地址及行列数，如下：
-
+<!-- https://docs.idqqimg.com/tim/docs/sheets/static/js/bundle_report_lazy-86eab7ee1b.js:1:66 -->
 ```sh
 # 远程压缩代码地址:行数:列数
-https://docs.idqqimg.com/tim/docs/sheets/static/js/bundle_report_lazy-86eab7ee1b.js:1:66
+https://github.githubassets.com/assets/frameworks-fd548924.js:1:66
 ```
 
 输入完成后按回车键，会在该 `xxx.js` 输出格式化后的代码文件及行列数。
