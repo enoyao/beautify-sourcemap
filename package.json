@@ -11,7 +11,7 @@
 		"url": "https://github.com/enoyao/beautify-sourcemap"
 	},
 	"license": "MIT",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"engines": {
 		"vscode": "^1.39.0"
 	},
@@ -38,7 +38,8 @@
 		"beautify"
 	],
 	"activationEvents": [
-		"onCommand:extension.sourcemap"
+		"onCommand:extension.sourcemap",
+		"onCommand:extension.sourcemapinfile"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -46,6 +47,10 @@
 			{
 				"command": "extension.sourcemap",
 				"title": "Beautify Source Map"
+			},
+			{
+				"command": "extension.sourcemapinfile",
+				"title": "Beautify Source Map In File"
 			}
 		],
 		"menus": {
@@ -54,6 +59,35 @@
 					"when": "resourceLangId == javascript",
 					"command": "extension.sourcemap",
 					"group": "source-map"
+				},
+				{
+					"when": "resourceLangId == javascript",
+					"command": "extension.sourcemapinfile",
+					"group": "source-map-in-file"
+				}
+			],
+			"editor/context": [
+				{
+					"when": "resourceLangId == javascript",
+					"command": "extension.sourcemap",
+					"group": "source-map"
+				},
+				{
+					"when": "resourceLangId == javascript",
+					"command": "extension.sourcemapinfile",
+					"group": "source-map-in-file"
+				}
+			],
+			"editor/title/context": [
+				{
+					"when": "resourceLangId == javascript",
+					"command": "extension.sourcemap",
+					"group": "source-map"
+				},
+				{
+					"when": "resourceLangId == javascript",
+					"command": "extension.sourcemapinfile",
+					"group": "source-map-in-file"
 				}
 			]
 		}

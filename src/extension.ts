@@ -59,7 +59,7 @@ const getSourceCode = (src: string | undefined) => {
 };
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "beautify-sourcemap" is now active!');
-	let disposable = vscode.commands.registerCommand('extension.sourcemap', ({ path }) => {
+	let sourcemap = vscode.commands.registerCommand('extension.sourcemap', ({ path }) => {
 		(async () => {
 			let longSrc: string | undefined = await vscode.window.showInputBox({ placeHolder });
 			// 获取行，列和 sourcemap.js 链接
@@ -68,10 +68,10 @@ export function activate(context: vscode.ExtensionContext) {
 			let line = linkInformation[linkInformation.length - 2];
 			let srcArr: any = (longSrc || '').match(/https:\/\/.+.js/g);
 			let src = srcArr[0];
-			console.log(path);
-			console.log(srcArr);
-			console.log(linkInformation[linkInformation.length - 1]);
-			console.log(linkInformation[linkInformation.length - 2]);
+			// console.log(path);
+			// console.log(srcArr);
+			// console.log(linkInformation[linkInformation.length - 1]);
+			// console.log(linkInformation[linkInformation.length - 2]);
 			let sourceCode = await getSourceCode(src);
 			let obj = jsbs(sourceCode, {}, {
 				line,
@@ -83,14 +83,22 @@ export function activate(context: vscode.ExtensionContext) {
 			// 弹出查找结果
 			vscode.window.showInformationMessage(`行为：${obj.loc.line}，列为：${obj.loc.column}`);
 			// 格式化代码
-			console.log(obj.code);
+			// console.log(obj.code);
 			// 格式化后对应的行数
-			console.log(obj.loc);
+			// console.log(obj.loc);
 		})();
 		vscode.window.showInformationMessage(placeHolder);
 	});
+	let sourcemapinfile = vscode.commands.registerCommand('extension.sourcemapinfile', ({ path }) => {
+		let sourceCode: string = fs.readFileSync(path).toString();
+		let obj = jsbs(sourceCode);
+		let code: string = obj.code
+		fs.writeFileSync(path, `${code}`);
+		vscode.window.showInformationMessage(placeHolder);
+	});
 
-	context.subscriptions.push(disposable);
+	context.subscriptions.push(sourcemap);
+	context.subscriptions.push(sourcemapinfile);
 }
 export function deactivate() { }
 
