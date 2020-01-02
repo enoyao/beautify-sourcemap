@@ -5,7 +5,6 @@ import * as https from 'https';
 const placeHolder = '请输入 sourcemap.js 链接，行号和列数，比如： https://xxx.js:1:66';
 const jsbs = require('js-beautify-sourcemap');
 
-
 const handleCode = (code: string, line: number, column: number) => {
 	const newStr: string = ` /************************** ${line}:${column} **************************/ `;
 	const insertStr = (code: string, column: number, newStr: string) => {
