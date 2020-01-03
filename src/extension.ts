@@ -5,6 +5,7 @@ import * as https from 'https';
 const placeHolder = '请输入 sourcemap.js 链接，行号和列数，比如： https://xxx.js:1:66';
 const jsbs = require('js-beautify-sourcemap');
 
+
 const handleCode = (code: string, line: number, column: number) => {
 	const newStr: string = ` /************************** ${line}:${column} **************************/ `;
 	const insertStr = (code: string, column: number, newStr: string) => {
@@ -56,6 +57,7 @@ const getSourceCode = (src: string | undefined) => {
 		});
 	});
 };
+
 export function activate(context: vscode.ExtensionContext) {
 	console.log('Congratulations, your extension "beautify-sourcemap" is now active!');
 	let sourcemap = vscode.commands.registerCommand('extension.sourcemap', ({ path }) => {
@@ -67,7 +69,6 @@ export function activate(context: vscode.ExtensionContext) {
 			let line = linkInformation[linkInformation.length - 2];
 			let srcArr: any = (longSrc || '').match(/https:\/\/.+.js/g);
 			let src = srcArr[0];
-
 			let sourceCode = await getSourceCode(src);
 			let obj = jsbs(sourceCode, {}, {
 				line,
