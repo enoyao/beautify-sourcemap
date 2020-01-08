@@ -68,10 +68,7 @@ export function activate(context: vscode.ExtensionContext) {
 			let line = linkInformation[linkInformation.length - 2];
 			let srcArr: any = (longSrc || '').match(/https:\/\/.+.js/g);
 			let src = srcArr[0];
-			// console.log(path);
-			// console.log(srcArr);
-			// console.log(linkInformation[linkInformation.length - 1]);
-			// console.log(linkInformation[linkInformation.length - 2]);
+
 			let sourceCode = await getSourceCode(src);
 			let obj = jsbs(sourceCode, {}, {
 				line,
