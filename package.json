@@ -37,9 +37,15 @@
 		"sourcemap",
 		"beautify"
 	],
+	"galleryBanner": {
+		"color": "#41205f",
+		"theme": "dark"
+	},
 	"activationEvents": [
 		"onCommand:extension.sourcemap",
-		"onCommand:extension.sourcemapinfile"
+		"onCommand:extension.sourcemapinfile",
+		"onCommand:extension.generatelog",
+		"onCommand:extension.generatelistlog"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -51,6 +57,14 @@
 			{
 				"command": "extension.sourcemapinfile",
 				"title": "Beautify Source Map In File"
+			},
+			{
+				"command": "extension.generatelog",
+				"title": "Tencent Doc: Generate Log"
+			},
+			{
+				"command": "extension.generatelistlog",
+				"title": "Tencent Doc: Generate List Log"
 			}
 		],
 		"menus": {
@@ -90,6 +104,20 @@
 					"group": "source-map-in-file"
 				}
 			]
+		}
+	},
+	"configuration": {
+		"title": "Live Server Config",
+		"properties": {
+			"liveServer.settings.port": {
+				"type": [
+					"number"
+				],
+				"default": 5500,
+				"minimum": 0,
+				"maximum": 65535,
+				"description": "Set Custom Port Number of Live Server. Set 0 if you want random port."
+			}
 		}
 	},
 	"scripts": {
