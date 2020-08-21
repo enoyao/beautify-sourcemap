@@ -81,7 +81,7 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	// 欢迎提示
-	let generatelog = vscode.commands.registerCommand('extension.generatelog', () => {
+	let generateLog = vscode.commands.registerCommand('extension.generateLog', () => {
 		const panel = vscode.window.createWebviewPanel(
 			'testWelcome', // viewType
 			"Generate Log", // 视图标题
@@ -96,7 +96,7 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(sourcemap);
 	context.subscriptions.push(sourcemapinfile);
-	context.subscriptions.push(generatelog);
+	context.subscriptions.push(generateLog);
 }
 export function deactivate() { }
 

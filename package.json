@@ -44,7 +44,7 @@
 	"activationEvents": [
 		"onCommand:extension.sourcemap",
 		"onCommand:extension.sourcemapinfile",
-		"onCommand:extension.generatelog",
+		"onCommand:extension.generateLog",
 		"onCommand:extension.generatelistlog"
 	],
 	"main": "./out/extension.js",
@@ -59,7 +59,7 @@
 				"title": "Beautify Source Map In File"
 			},
 			{
-				"command": "extension.generatelog",
+				"command": "extension.generateLog",
 				"title": "Tencent Doc: Generate Log"
 			},
 			{
